@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-
+ARG DEBIAN FRONTEND=noninteractive
 RUN apt update
 RUN apt-get install -y git build-essential automake libevent-dev libssl-dev zlib1g-dev python3.8 pkg-config liblzma-dev libzstd-dev
 RUN useradd -ms /bin/bash tor
@@ -9,6 +9,7 @@ RUN cd home/tor/tor && ./autogen.sh
 RUN cd home/tor/tor && ./configure --disable-asciidoc && make
 RUN cd home/tor/tor && make install
 USER tor
+RUN mkdir /home/tor/log
 EXPOSE 9050
 EXPOSE 80
 EXPOSE 443
