@@ -8,6 +8,7 @@ COPY config/auths_dir.inc /home/tor/tor/src/app/config/auths_dir.inc
 RUN cd home/tor/tor && ./autogen.sh
 RUN cd home/tor/tor && ./configure --disable-asciidoc && make
 RUN cd home/tor/tor && make install
+COPY config/torrc /usr/local/etc/tor/torrc
 USER tor
 RUN mkdir /home/tor/log
 EXPOSE 9050
