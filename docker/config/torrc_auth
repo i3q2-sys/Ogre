@@ -254,9 +254,9 @@ ContactInfo test@test.com
 AuthoritativeDirectory 1
 UseDefaultFallbackDirs 0
 V3AuthoritativeDirectory 1
-SOCKSPort 127.0.0.1:9050
-ORPort 127.0.0.1:6969
-DirPort 127.0.0.1:6699
-V3AuthVotingInterval 3600
-V3AuthVoteDelay 2
-V3AuthDistDelay 2
+SOCKSPort 0.0.0.0:9050
+ORPort 0.0.0.0:6969
+DirPort 0.0.0.1:6699
+V3AuthVotingInterval 5 minutes
+V3AuthVoteDelay 1 minutes
+V3AuthDistDelay 1 minutes
