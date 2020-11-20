@@ -5,7 +5,7 @@ git clone https://gitlab.com/torproject/tor.git
 cp config/auths_dir.inc tor/src/app/config/auth_dirs.inc
 cd /home/ubuntu/PTN/docker/tor && ./autogen.sh
 cd /home/ubuntu/PTN/docker/tor && ./configure --disable-asciidoc && make
-cd /home/ubuntu/PTN/docker/tor && make install
+cd /home/ubuntu/PTN/docker/tor && sudo make install
 cd /home/ubuntu/PTN/docker && sudo cp config/torrc_auth /usr/local/etc/tor/torrc
 mkdir /home/ubuntu/log
 mkdir /home/ubuntu/.tor
