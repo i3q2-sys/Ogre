@@ -35,7 +35,7 @@
 ## may provide sensitive information to an attacker who obtains the logs.
 ##
 ## Send all messages of level 'notice' or higher to @LOCALSTATEDIR@/log/tor/notices.log
-Log notice file /home/tor/log/notices.log
+Log notice file /home/ubuntu/log/notices.log
 ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
 #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
 ## Use the system log instead of Tor's logfiles
@@ -94,7 +94,7 @@ Log notice file /home/tor/log/notices.log
 
 ## The IP address or full DNS name for incoming connections to your
 ## relay. Leave commented out and Tor will guess.
-Address 
+Address 172.31.22.112
 
 ## If you have multiple network interfaces, you can specify one for
 ## outgoing traffic to use.
@@ -110,7 +110,7 @@ Address
 ##Nicknames must be between 1 and 19 characters inclusive, and must
 ## contain only the characters [a-zA-Z0-9].
 ## If not set, "Unnamed" will be used.
-Nickname marti
+Nickname alejandro
 
 ## Define these to limit how much relayed traffic you will allow. Your
 ## own traffic is still unthrottled. Note that RelayBandwidthRate must
@@ -254,9 +254,13 @@ ContactInfo test@test.com
 AuthoritativeDirectory 1
 UseDefaultFallbackDirs 0
 V3AuthoritativeDirectory 1
-SOCKSPort 0.0.0.0:9050
-ORPort 0.0.0.0:6969
-DirPort 0.0.0.1:6699
+SOCKSPort 0
+ORPort 172.31.22.112:6969
+DirPort 172.31.22.112:9050
 V3AuthVotingInterval 5 minutes
 V3AuthVoteDelay 1 minutes
 V3AuthDistDelay 1 minutes
+TestingTorNetwork 1
+ExtendAllowPrivateAddresses 1
+DirAllowPrivateAddresses 1
+DirAuthority orport=6969 v3ident=3i+SLxtN6rKnEjLVBLy23BrX9e9YrqrMKdFYSaUShGc 172.31.25.34:9050 23D2 7887 9F7C E57C 6ABC 60B7 6F9F F662 AF4F 5425

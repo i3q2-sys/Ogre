@@ -34,7 +34,7 @@
 ## may provide sensitive information to an attacker who obtains the logs.
 ##
 ## Send all messages of level 'notice' or higher to @LOCALSTATEDIR@/log/tor/notices.log
-#Log notice file @LOCALSTATEDIR@/log/tor/notices.log
+Log notice file /home/ubuntu/log/notices.log
 ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
 #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
 ## Use the system log instead of Tor's logfiles
@@ -189,4 +189,14 @@
 ## a private bridge, for example because you'll give out your bridge
 ## address manually to your friends, uncomment this line:
 #PublishServerDescriptor 0
+UseDefaultFallbackDirs 0
 
+DirAuthority alejandro orport=6969 v3ident=8ExA7smGhHOiDwEttS04pkINWRh72YBMJB7XOMaF7ww 172.31.22.112:9050 C71F 48D4 36BC E2BD FD74 521A F6DF F76F 1805 CF6E
+DirAuthority marti orport=6969 v3ident=3i+SLxtN6rKnEjLVBLy23BrX9e9YrqrMKdFYSaUShGc 172.31.25.34:9050 23D2 7887 9F7C E57C 6ABC 60B7 6F9F F662 AF4F 5425
+DirAllowPrivateAddresses 1
+TestingTorNetwork 1
+ExtendAllowPrivateAddresses 1
+EnforceDistinctSubnets 0
+AssumeReachable 1
+ORPort 172.31.20.85:6969
+DirPort 172.31.20.85:9050
