@@ -5,3 +5,4 @@ ServerTransportListentAddr obfs4 0.0.0.0:9999
 ExtORPort auto
 Nickname OgreMinion
 BandwidthRate 50 KBytes
+Log notice file ~/.tor/notices.log
