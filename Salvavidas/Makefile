@@ -1,6 +1,9 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
+parse-vars:
+	cd scripts && chmod 700 parse_params.sh && ./parse_params.sh
+
 terraform-init:    #initialize terraform, only necessary fist time b4 terraform execution or if changes done in terraform configuration  
 	cd terraform && terraform init
 terraform-plan: #plan b4 apply

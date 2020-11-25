@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-2"
+  region = var.AWS_ZONE
 }
 
 data "aws_ami" "ubuntu" {
@@ -23,41 +23,58 @@ resource "aws_instance" "torbridge" {
   count           = var.COUNT
   ami             = data.aws_ami.ubuntu.id
   instance_type   = var.MACHINE_TYPE
-  security_groups = ["test-all-allowed"]
+  security_groups = [aws_security_group.torbridge_sg.name]
   tags = {
-    Name = "TorBridge"
+    Name = "TorBridge${count.index}"
+    Type = "Ogre"
   }
+
+  depends_on = [aws_security_group.torbridge_sg]
 
 }
 
 
 resource "aws_security_group" "torbridge_sg" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  name        = "torbridge_sg"
+  description = "Allow bridge-related trafic"
 
   ingress {
-    description = "TLS from VPC"
-    from_port   = 443
-    to_port     = 443
+    description = "ORport"
+    from_port   = var.ORPORT
+    to_port     = var.ORPORT
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.main.cidr_block]
   }
+
+  ingress {
+    description = "ORport"
+    from_port   = var.ORPORT
+    to_port     = var.ORPORT
+    protocol    = "udp"
+  }
+
+  ingress {
+    description = "ORport"
+    from_port   = var.OBFS4PORT
+    to_port     = var.OBFS4PORT
+    protocol    = "tcp"
+  }
+
+  ingress {
+    description = "ORport"
+    from_port   = var.OBFS4PORT
+    to_port     = var.OBFS4PORT
+    protocol    = "udp"
+  }
+
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "allow_tls"
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
   }
 }
 
 
-
 output "ips" {
-  value = [aws_instance.torbridge.public_ip]
+  value = [aws_instance.torbridge.*.public_ip]
 }
