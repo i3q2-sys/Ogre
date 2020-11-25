@@ -12,9 +12,9 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 
 ## Dependencies
 
--[A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
--[Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
--[Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
+- [A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+- [Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
+- [Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
 
 ## Usage
 
