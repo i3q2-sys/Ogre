@@ -17,6 +17,8 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 - [Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
 
 ## Usage
+Firstly, you have to generate the .env file. In order to do that you have execute:
+`cp example.env .env`
 
 The only file that the user has to modify is the `.env`, which looks like this:
 
