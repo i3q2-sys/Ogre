@@ -1,10 +1,11 @@
 # Ogre: Deploy multiple TOR bridges instantly
 
-## But exactly, what is Ogre?
+![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
+
+
+## But, exactly, what is Ogre?
 
 Well, Ogre is an open source TOR project that creates a bunch of bridges in the AWS cloud almost instantly thanks to Terraform and Ansible :+1:
-
-![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
 
 Bridges are very useful if TOR is blocked in your country. They are an alternative entry point to the TOR network much harder to detect than the usual entry nodes, but you don’t know if a Government or an interested third party has created them to monitorize TOR users activity.
 
