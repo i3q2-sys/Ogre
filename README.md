@@ -1,4 +1,4 @@
-# Ogre: Deploy multiple TOR bridges in the cloud instantly
+# Ogre: Deploy multiple TOR bridges in the AWS cloud instantly
 
 ![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
 
@@ -21,16 +21,16 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 Firstly, you have to generate the .env file. In order to do that you have execute:
 `cp example.env .env`
 
-The only file that the user has to modify is the `.env`, which looks like this:
+The only file that the user has to modify is the newly created `.env`, which looks like this:
 
 ```
 AWS_ACCESS_KEY= 
 AWS_SECRET_ACCESS_KEY= 
-TF_VAR_COUNT=1 #number of bridges
+TF_VAR_COUNT=1 #number of bridges that will be deployed
 TF_VAR_ORPORT=443 
 TF_VAR_OBFS4PORT=9999
 TF_VAR_MACHINE_TYPE=t2.micro #the t2.micro is the free tier machine type
-TF_VAR_AWS_ZONE=eu-west-2 #whre do you want to create them
+TF_VAR_AWS_ZONE=eu-west-2 #region where you want to create them
 BANDWIDTH= 50 #in KBytes, minimum is 50 KB
 ```
 
