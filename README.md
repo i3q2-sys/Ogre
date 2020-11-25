@@ -1,20 +1,22 @@
-#Ogre: Deploy multiple TOR bridges instantly
+# Ogre: Deploy multiple TOR bridges instantly
 
-##But exactly, what is Ogre?
+## But exactly, what is Ogre?
 
-Well, Ogre is an open source TOR project that creates a bunch of bridges in the cloud almost instantly thanks to Terraform and Ansible :+1: .
+Well, Ogre is an open source TOR project that creates a bunch of bridges in the AWS cloud almost instantly thanks to Terraform and Ansible :+1: .
+
+
 
 Bridges are very useful if TOR is blocked in your country. They are an alternative entry point to the TOR network much harder to detect than the usual entry nodes, but you don’t know if a Government or an interested third party has created them to monitorize TOR users activity.
 
 With Ogre you avoid this by creating your *own* self hosted TOR bridges instantly! Just resolve a bunch of instances and you are good to go!
 
-##Dependencies
+## Dependencies
 
-[A free AWS account] (https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-[Terraform 0.13 installed] (https://github.com/hashicorp/terraform/tree/v0.13.5) 
-[Ansible 2.9 installed] (https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
+[A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+[Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
+[Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
 
-##Usage
+## Usage
 
 The only file that the user has to modify is the `.env`, which looks like this:
 
