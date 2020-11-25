@@ -1,10 +1,11 @@
-# Ogre: Deploy multiple TOR bridges instantly
+# Ogre: Deploy multiple TOR bridges in the AWS cloud instantly
 
-## But exactly, what is Ogre?
-
-Well, Ogre is an open source TOR project that creates a bunch of bridges in the AWS cloud almost instantly thanks to Terraform and Ansible :+1: .
+![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
 
 
+## But, exactly, what is Ogre?
+
+Well, Ogre is an open source TOR project that creates a bunch of bridges in the AWS cloud almost instantly thanks to Terraform and Ansible :+1:
 
 Bridges are very useful if TOR is blocked in your country. They are an alternative entry point to the TOR network much harder to detect than the usual entry nodes, but you don’t know if a Government or an interested third party has created them to monitorize TOR users activity.
 
@@ -12,23 +13,25 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 
 ## Dependencies
 
-[A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-[Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
-[Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
+- [A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+- [Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
+- [Ansible 2.9 installed](https://docs.ansible.com/ansible/latest/roadmap/ROADMAP_2_9.html)
 
 ## Usage
+Firstly, you have to generate the .env file. In order to do that you have execute:
+`cp example.env .env`
 
-The only file that the user has to modify is the `.env`, which looks like this:
+The only file that the user has to modify is the newly created `.env`, which looks like this:
 
 ```
 AWS_ACCESS_KEY= 
 AWS_SECRET_ACCESS_KEY= 
-TF_VAR_COUNT=1 #number of bridges
-TF_VAR_ORPORT=443 
+TF_VAR_COUNT=1                #number of bridges that will be deployed
+TF_VAR_ORPORT=443             #default is 443 to avoid most firewalls but you can change it if you want
 TF_VAR_OBFS4PORT=9999
-TF_VAR_MACHINE_TYPE=t2.micro #the t2.micro is the free tier machine type
-TF_VAR_AWS_ZONE=eu-west-2 #whre do you want to create them
-BANDWIDTH= 50 #in KBytes, minimum is 50 KB
+TF_VAR_MACHINE_TYPE=t2.micro  #the t2.micro is the free tier machine type
+TF_VAR_AWS_ZONE=eu-west-2     #region where you want to create them
+BANDWIDTH= 50                 #in KBytes, minimum is 50 KB
 ```
 
 In order to get the AWS access keys:
