@@ -28,7 +28,7 @@ resource "aws_instance" "torbridge" {
     Name = "TorBridge${count.index}"
     Type = "Ogre"
   }
-
+  key_name   = var.KEY_NAME
   depends_on = [aws_security_group.torbridge_sg]
 
 }

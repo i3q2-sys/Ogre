@@ -17,3 +17,7 @@ variable "MACHINE_TYPE" {
 variable "AWS_ZONE" {
   type = string
 }
+
+variable "KEY_NAME" {
+  type = string
+}
