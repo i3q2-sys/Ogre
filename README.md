@@ -26,12 +26,12 @@ The only file that the user has to modify is the newly created `.env`, which loo
 ```
 AWS_ACCESS_KEY= 
 AWS_SECRET_ACCESS_KEY= 
-TF_VAR_COUNT=1 #number of bridges that will be deployed
-TF_VAR_ORPORT=443 
+TF_VAR_COUNT=1                #number of bridges that will be deployed
+TF_VAR_ORPORT=443             #default is 443 to avoid most firewalls but you can change it if you want
 TF_VAR_OBFS4PORT=9999
-TF_VAR_MACHINE_TYPE=t2.micro #the t2.micro is the free tier machine type
-TF_VAR_AWS_ZONE=eu-west-2 #region where you want to create them
-BANDWIDTH= 50 #in KBytes, minimum is 50 KB
+TF_VAR_MACHINE_TYPE=t2.micro  #the t2.micro is the free tier machine type
+TF_VAR_AWS_ZONE=eu-west-2     #region where you want to create them
+BANDWIDTH= 50                 #in KBytes, minimum is 50 KB
 ```
 
 In order to get the AWS access keys:
