@@ -1,4 +1,4 @@
-# Ogre: Deploy multiple TOR bridges instantly
+# Ogre: Deploy multiple TOR bridges in the cloud instantly
 
 ![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
 
@@ -15,7 +15,7 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 
 - [A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 - [Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
-- [Ansible 2.9 installed](https://stackoverflow.com/questions/60523088/how-to-install-ansible-2-9-on-ubuntu-18-04-and-utilize-python3)
+- [Ansible 2.9 installed](https://docs.ansible.com/ansible/latest/roadmap/ROADMAP_2_9.html)
 
 ## Usage
 Firstly, you have to generate the .env file. In order to do that you have execute:
