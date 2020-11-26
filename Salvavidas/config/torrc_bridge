@@ -1,7 +1,7 @@
 BridgeRelay 1
-OrPort 443
+OrPort 9999
 ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-ServerTransportListenAddr obfs4 0.0.0.0:9999
+ServerTransportListenAddr obfs4 0.0.0.0:443
 ExtORPort auto
 Nickname OgreMinion
 BandwidthRate 50 KBytes

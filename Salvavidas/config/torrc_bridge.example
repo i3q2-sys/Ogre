@@ -1,7 +1,7 @@
 BridgeRelay 1
-OrPort TOKEN1
+OrPort TOKEN2
 ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-ServerTransportListenAddr obfs4 0.0.0.0:TOKEN2
+ServerTransportListenAddr obfs4 0.0.0.0:TOKEN1
 ExtORPort auto
 Nickname OgreMinion
 BandwidthRate 50 KBytes
