@@ -24,17 +24,29 @@ Firstly, you have to generate the .env file. In order to do that you have execut
 The only file that the user has to modify is the newly created `.env`, which looks like this:
 
 ```
-AWS_ACCESS_KEY= 
-AWS_SECRET_ACCESS_KEY= 
-TF_VAR_COUNT=1                #number of bridges that will be deployed
-TF_VAR_ORPORT=443             #default is 443 to avoid most firewalls but you can change it if you want
-TF_VAR_OBFS4PORT=9999
-TF_VAR_MACHINE_TYPE=t2.micro  #the t2.micro is the free tier machine type
-TF_VAR_AWS_ZONE=eu-west-2     #region where you want to create them
-BANDWIDTH= 50                 #in KBytes, minimum is 50 KB
+AWS_ACCESS_KEY=
+AWS_SECRET_ACCESS_KEY=
+TF_VAR_COUNT=1
+TF_VAR_ORPORT=9999                  #this cannot be a well known port
+TF_VAR_OBFS4PORT=443                #this can be a well known port
+TF_VAR_MACHINE_TYPE=t2.micro        #the t2.micro is the free tier machine type
+TF_VAR_AWS_ZONE=eu-west-2           #region where you want to create them
+BANDWIDTH= 50                       #in KBytes, minimum is 50 KB
+TF_VAR_KEY_NAME=                    #here you hace to put the .pem key (without the .pem) for the SSH connection
+ANSIBLE_HOST_KEY_CHECKING=False     #do not touch
 ```
 
 In order to get the AWS access keys:
 
 **account name** > **My Security Credentials** > **Access keys (access key ID and secret access key)** > **Create Access Key**. And either download the file (rootkey.csv) or show the keys in order to copy them to the environment variables AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY in the .env file.
+
+Then simply go to the directory of the repository and type:
+
+```
+make init 
+make prepare-infra 
+make apply-infra 
+```
+
+That's it! Now you have your own tor bridges!
 
