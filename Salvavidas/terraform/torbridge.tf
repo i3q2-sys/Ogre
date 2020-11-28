@@ -90,3 +90,24 @@ resource "aws_security_group" "torbridge_sg" {
 output "ips" {
   value = [aws_instance.torbridge.*.public_ip]
 }
+
+resource "null_resource" "dependencies" {
+  count = var.COUNT
+  connection {
+    host        = aws_instance.torbridge[count.index].public_ip
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("prova-node.pem")
+
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt update",
+      "sudo apt-get install python -y",
+    ]
+  }
+  depends_on = [
+    aws_instance.torbridge
+  ]
+}

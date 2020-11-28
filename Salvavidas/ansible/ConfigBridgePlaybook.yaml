@@ -1,11 +1,11 @@
 ---
 - name: Levantar nodos de tor_bridge
-  hosts: tag_Type_Ogre
+  hosts: all
   remote_user: ubuntu
   tasks:
   - name: Mover el archivo torrc_bridge a la máquina.p
     copy:
-          src: /home/alejandro/Documentos/Ansible-Tor/torrc_bridge
+          src: ../config/torrc_bridge
           dest: /home/ubuntu/torrc_bridge
   - name: Aplicar Script de config del bridge.
-    script: /home/alejandro/Documentos/Ansible-Tor/install_bridge.sh 
+    script: ../scripts/install_bridge.sh 
