@@ -38,10 +38,13 @@ In order to get the AWS access keys:
 
 **account name** > **My Security Credentials** > **Access keys (access key ID and secret access key)** > **Create Access Key**. And either download the file (rootkey.csv) or show the keys in order to copy them to the environment variables AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY in the .env file.
 
-Then simply go to the directory of the repository and type:<br>
-`make init` <br>
-`make prepare-infra` <br>
-`make apply-infra` <br>
+Then simply go to the directory of the repository and type:
+
+```
+make init 
+make prepare-infra 
+make apply-infra 
+```
 
 That's it! Now you have your own tor bridges!
 
