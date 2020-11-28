@@ -1,0 +1,9 @@
+#plugin.aws_ec2.yaml
+plugin: aws_ec2
+regions:
+  - eu-west-2
+aws_access_key: uwu
+aws_secret_key: OwO What's this?
+
+filters:
+  tag:Type: Ogre
