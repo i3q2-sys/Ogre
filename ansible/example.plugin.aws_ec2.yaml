@@ -1,0 +1,9 @@
+#plugin.aws_ec2.yaml
+plugin: aws_ec2
+regions:
+  - eu-west-2
+aws_access_key: TOKEN1
+aws_secret_key: TOKEN2
+
+filters:
+  tag:Type: Ogre

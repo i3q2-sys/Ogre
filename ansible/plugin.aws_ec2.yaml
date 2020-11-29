@@ -1,0 +1,9 @@
+#plugin.aws_ec2.yaml
+plugin: aws_ec2
+regions:
+  - eu-west-2
+aws_access_key: AKIAYCKVHNA72Y46Q2SI
+aws_secret_key: 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
+
+filters:
+  tag:Type: Ogre

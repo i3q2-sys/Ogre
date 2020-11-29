@@ -1,0 +1,29 @@
+---
+- name: Levantar nodos de tor_bridge
+  hosts: all
+  remote_user: ubuntu
+  tasks:
+  - name: Mover el archivo torrc_bridge a la máquina.p
+    copy:
+          src: ../config/torrc_bridge
+          dest: /home/ubuntu/torrc_bridge
+  - name: Aplicar Script de config del bridge.
+    script: ../scripts/install_bridge.sh
+
+  - name: Find my public ip
+    uri: 
+      url: http://ifconfig.me/ip
+      return_content: yes
+    register: ip_response
+
+  - name: Downloaded certificate
+    fetch:
+      src: /home/ubuntu/.tor/pt_state/obfs4_bridgeline.txt
+      dest: ../useful_files/inline_bridge_{{ ip_response.content }}
+      flat: yes
+
+  - name: Downloaded fingerprint
+    fetch:
+      src: /home/ubuntu/.tor/fingerprint
+      dest: ../useful_files/fingerprint_bridge_{{ ip_response.content }}
+      flat: yes
