@@ -62,10 +62,10 @@ Go to options > Tor > Bridges and check Use a bridge and Provide a Bridge, where
 `Bridge obfs4 <IP ADDRESS>:<PORT> <FINGERPRINT> cert=<CERTIFICATE> iat-mode=0`
 
 Where:
-- <IP ADDRESS> is the bridge IP (returned to you by Terraform)
-- <PORT> is the ORPORT you have configured in the .env
-- <FINGERPRINT> (returned to you by Ansible)
-- <CERTIFICATE> (returned to you by Ansible)
+- IP ADDRESS is the bridge IP (returned to you by Terraform)
+- PORT is the ORPORT you have configured in the .env
+- FINGERPRINT (returned to you by Ansible)
+- CERTIFICATE (returned to you by Ansible)
 
 ![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/tor_3.png)
 
