@@ -67,5 +67,7 @@ Where:
 - FINGERPRINT (returned to you by Ansible)
 - CERTIFICATE (returned to you by Ansible)
 
+![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/tor_3.png)
+
 
 
