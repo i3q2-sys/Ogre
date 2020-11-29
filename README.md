@@ -36,12 +36,12 @@ TF_VAR_KEY_NAME=                    #here you hace to put the .pem key (without 
 ANSIBLE_HOST_KEY_CHECKING=False     #do not touch
 ```
 
-Get the AWS access keys:
+> Get the AWS access keys:
 
 **account name** > **My Security Credentials** > **Access keys (access key ID and secret access key)** > **Create Access Key**. And either download the file (rootkey.csv) or show the keys in order to copy them to the environment variables AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY in the .env file.
 
 
-Get the SSH .pem key:
+> Get the SSH .pem key:
 
 Write EC2 in the search bar > **Network & Security** > **Key Pairs** > **create key pair**, download it (.pem) and put it into the Terraform folder.
 
