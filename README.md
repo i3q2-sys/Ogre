@@ -26,13 +26,13 @@ The only file that the user has to modify is the newly created `.env`, which loo
 ```
 AWS_ACCESS_KEY=
 AWS_SECRET_ACCESS_KEY=
-TF_VAR_COUNT=1
+TF_VAR_COUNT=1                      #number of bridges you want to deploy
 TF_VAR_ORPORT=9999                  #this cannot be a well known port
 TF_VAR_OBFS4PORT=443                #this can be a well known port
 TF_VAR_MACHINE_TYPE=t2.micro        #the t2.micro is the free tier machine type
 TF_VAR_AWS_ZONE=eu-west-2           #region where you want to create them
 BANDWIDTH= 50                       #in KBytes, minimum is 50 KB
-TF_VAR_KEY_NAME=                    #here you hace to put the .pem key (without the .pem) for the SSH connection
+TF_VAR_KEY_NAME=                    #here you have to put the .pem key (without the .pem) for the SSH connection
 ANSIBLE_HOST_KEY_CHECKING=False     #do not touch
 ```
 
@@ -46,7 +46,7 @@ ANSIBLE_HOST_KEY_CHECKING=False     #do not touch
 Write EC2 in the search bar > **Network & Security** > **Key Pairs** > **create key pair**, download it (.pem) and put it into the Terraform folder.
 
 
-Then simply go to the directory of the repository and type:
+Then type:
 
 ```
 make init 
@@ -55,6 +55,9 @@ make apply-infra
 ```
 
 That's it! Now you have your own tor bridges!
+
+If you want to destroy the created infrastructure just type <br>
+`make destroy-infra`
 
 Now just install the [TOR browser](https://www.torproject.org/download/)<br>
 Go to options > Tor > Bridges and check Use a bridge and Provide a Bridge, where you have to enter the following:<br>
@@ -66,6 +69,12 @@ Where:
 - **PORT** is the ORPORT you have configured in the .env
 - **FINGERPRINT** (returned to you by Ansible)
 - **CERTIFICATE** (returned to you by Ansible)
+
+To get all the necessary info go to the useful_files directory.
+
+- In the fingerprint_bridge_<IP_v4> you have the Fingerprint (not OgreMinion)
+- In the nline_bridge_<IP_v4> you have the line you have to put into the tor browser with the cert already attached
+- The IPv4 is in the name of the files
 
 ![alt text](https://github.com/i3q2-sys/PTN/blob/main/image/tor_3.png)
 
