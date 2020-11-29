@@ -36,9 +36,13 @@ TF_VAR_KEY_NAME=                    #here you hace to put the .pem key (without 
 ANSIBLE_HOST_KEY_CHECKING=False     #do not touch
 ```
 
-In order to get the AWS access keys:
+Get the AWS access keys:
 
 **account name** > **My Security Credentials** > **Access keys (access key ID and secret access key)** > **Create Access Key**. And either download the file (rootkey.csv) or show the keys in order to copy them to the environment variables AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY in the .env file.
+
+Get the SSH .pem key:
+
+
 
 Then simply go to the directory of the repository and type:
 
@@ -49,4 +53,7 @@ make apply-infra
 ```
 
 That's it! Now you have your own tor bridges!
+
+Now just install the [TOR browser](https://www.torproject.org/download/)
+Go to options > 
 
