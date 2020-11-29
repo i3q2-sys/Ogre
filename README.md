@@ -56,7 +56,7 @@ make apply-infra
 
 That's it! Now you have your own tor bridges!
 
-Now just install the [TOR browser](https://www.torproject.org/download/)
+Now just install the [TOR browser](https://www.torproject.org/download/)<br>
 Go to options > Tor > Bridges and check Use a bridge and Provide a Bridge, where you have to enter the following:<br>
 
 `Bridge obfs4 <IP ADDRESS>:<PORT> <FINGERPRINT> cert=<CERTIFICATE> iat-mode=0`
