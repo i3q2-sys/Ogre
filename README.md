@@ -40,8 +40,10 @@ Get the AWS access keys:
 
 **account name** > **My Security Credentials** > **Access keys (access key ID and secret access key)** > **Create Access Key**. And either download the file (rootkey.csv) or show the keys in order to copy them to the environment variables AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY in the .env file.
 
+
 Get the SSH .pem key:
 
+Write EC2 in the search bar > **Network & Security** > **Key Pairs** > **create key pair**, download it (.pem) and put it into the Terraform folder.
 
 
 Then simply go to the directory of the repository and type:
@@ -55,5 +57,15 @@ make apply-infra
 That's it! Now you have your own tor bridges!
 
 Now just install the [TOR browser](https://www.torproject.org/download/)
-Go to options > 
+Go to options > Tor > Bridges and check Use a bridge and Provide a Bridge, where you have to enter the following:<br>
+
+`Bridge obfs4 <IP ADDRESS>:<PORT> <FINGERPRINT> cert=<CERTIFICATE> iat-mode=0`
+
+Where:
+- IP is the bridge IP (returned to you by Terraform)
+- PORT is the ORPORT you have configured in the .env
+- FINGERPRINT (returned to you by Ansible)
+- CERTIFICATE (returned to you by Ansible)
+
+
 
