@@ -1,6 +1,6 @@
 # Ogre: Deploy multiple TOR bridges in the AWS cloud instantly
 
-![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/ogre.png)
+![alt text](https://github.com/i3q2-sys/PTN/blob/main/image/ogre.png)
 
 
 ## But, exactly, what is Ogre?
@@ -67,7 +67,7 @@ Where:
 - **FINGERPRINT** (returned to you by Ansible)
 - **CERTIFICATE** (returned to you by Ansible)
 
-![alt text](https://github.com/i3q2-sys/PTN/blob/main/Salvavidas/image/tor_3.png)
+![alt text](https://github.com/i3q2-sys/PTN/blob/main/image/tor_3.png)
 
 
 
