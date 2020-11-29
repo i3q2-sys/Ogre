@@ -1,8 +1,0 @@
-BridgeRelay 1
-OrPort TOKEN1
-ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-ServerTransportListenAddr obfs4 0.0.0.0:TOKEN2
-ExtORPort auto
-Nickname OgreMinion
-BandwidthRate 50 KBytes
-Log notice file ~/.tor/notices.log
