@@ -95,12 +95,13 @@ resource "null_resource" "dependencies" {
     host        = aws_instance.torbridge[count.index].public_ip
     type        = "ssh"
     user        = "ubuntu"
-    private_key = file("prova-node.pem")
+    private_key = file("${var.KEY_NAME}.pem")
 
   }
 
   provisioner "remote-exec" {
     inline = [
+      "sleep 5",
       "sudo apt update",
       "sudo apt-get install python -y",
     ]
