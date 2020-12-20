@@ -14,8 +14,8 @@ With Ogre you avoid this by creating your *own* self hosted TOR bridges instantl
 ## Dependencies
 
 - [A free AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-- [Terraform 0.13 installed](https://github.com/hashicorp/terraform/tree/v0.13.5) 
-- [Ansible 2.9 installed](https://docs.ansible.com/ansible/latest/roadmap/ROADMAP_2_9.html)
+- [Docker](https://docs.docker.com/engine/install/ubuntu/) 
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Usage
 Firstly, you have to generate the .env file. In order to do that you have execute:
